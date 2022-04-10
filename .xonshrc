@@ -1,0 +1,23 @@
+# XONSH WEBCONFIG START
+$PROMPT = '{INTENSE_RED}{user}{RESET} at {INTENSE_PURPLE}{hostname}{RESET} in {BOLD_GREEN}{cwd}{RESET}\n↪ '
+# $XONSH_COLOR_STYLE = 'monokai'
+$NVIM_TUI_ENABLE_TRUE_COLOR = 1
+$EDITOR = 'nvim'
+$VISUAL = 'code'
+
+custom_aliases = {
+    "vim": "nvim",
+    "jbb": "jupyter-book build",
+    "jc": "jupyter-book clean",
+    "jca": "jupyter-book clean --all",
+    "jt": "jupytext",
+}
+
+aliases.update(custom_aliases)
+
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.expanduser('~/.xonsh/'))
+del _sys, _os
+
+xontrib load argcomplete coreutils kitty pdb prompt_vi_mode z
+# XONSH WEBCONFIG END
