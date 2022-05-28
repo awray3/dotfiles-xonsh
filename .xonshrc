@@ -1,5 +1,5 @@
-# XONSH WEBCONFIG START
-$PROMPT = '{INTENSE_RED}{user}{RESET} at {INTENSE_PURPLE}{hostname}{RESET} in {BOLD_GREEN}{cwd}{RESET}\n↪ '
+# XONSHr WEBCONFIG START
+# $PROMPT = '{INTENSE_RED}{user}{RESET} at {INTENSE_PURPLE}{hostname}{RESET} in {BOLD_GREEN}{cwd}{RESET}\n↪ '
 $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 $EDITOR = 'nvim'
 $VISUAL = 'code'
@@ -18,5 +18,6 @@ import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.expanduser('~/.xonsh-scripts/'))
 del _sys, _os
 
-xontrib load argcomplete coreutils kitty pdb prompt_vi_mode z
+xontrib load argcomplete coreutils kitty prompt_vi_mode z homebrew direnv
+xontrib load prompt_starship
 # XONSH WEBCONFIG END
