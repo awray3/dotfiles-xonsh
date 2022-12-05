@@ -6,10 +6,6 @@ $VISUAL = 'code'
 
 custom_aliases = {
     "vim": "nvim",
-    "jbb": "jupyter-book build",
-    "jc": "jupyter-book clean",
-    "jca": "jupyter-book clean --all",
-    "jt": "jupytext",
 }
 
 aliases.update(custom_aliases)
@@ -18,6 +14,13 @@ import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.expanduser('~/.xonsh-scripts/'))
 del _sys, _os
 
-xontrib load argcomplete coreutils kitty prompt_vi_mode z homebrew direnv
-xontrib load prompt_starship
+xontrib load argcomplete 
+xontrib load coreutils 
+xontrib load kitty 
+xontrib load prompt_vi_mode 
+xontrib load z 
+# production-only
+# xontrib load homebrew 
+# xontrib load direnv
+# xontrib load prompt_starship
 # XONSH WEBCONFIG END
