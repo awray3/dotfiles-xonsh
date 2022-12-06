@@ -7,3 +7,4 @@ xontrib-argcomplete
 xontrib-prompt-starship
 xontrib-homebrew
 xonsh-direnv
+boto3

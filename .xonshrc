@@ -1,6 +1,5 @@
-# XONSHr WEBCONFIG START
 # $PROMPT = '{INTENSE_RED}{user}{RESET} at {INTENSE_PURPLE}{hostname}{RESET} in {BOLD_GREEN}{cwd}{RESET}\n↪ '
-# $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+from textwrap import dedent
 $EDITOR = 'nvim'
 $VISUAL = 'code'
 
@@ -15,24 +14,32 @@ def add_scripts_to_path(scripts_folder):
     _sys.path.insert(0, _os.path.expanduser(scripts_folder))
     del _sys, _os
 
-print(r"""
-__  __               _     
-\ \/ /___  _ __  ___| |__  
- \  // _ \| '_ \/ __| '_ \ 
- /  \ (_) | | | \__ \ | | |
-/_/\_\___/|_| |_|___/_| |_|
+def splash():
+    splash_str = dedent(r"""
+        __  __               _     
+        \ \/ /___  _ __  ___| |__  
+         \  // _ \| '_ \/ __| '_ \ 
+         /  \ (_) | | | \__ \ | | |
+        /_/\_\___/|_| |_|___/_| |_|
 
-Documentation: https://xon.sh/
-"""
-)
+        Documentation: https://xon.sh/
+        """
+    )
+    print(splash_str)
 
+def install_requirements():
+    xpip install --upgrade pip
+    xpip install -r ~/.xonsh/requirements.txt
 
+# Load xontribs
 xontrib load argcomplete 
 xontrib load coreutils 
 xontrib load prompt_vi_mode 
 xontrib load z 
-# production-only
 xontrib load kitty 
 xontrib load homebrew 
 xontrib load direnv
-# XONSH WEBCONFIG END
+
+add_scripts_to_path('~/.xonsh')
+
+splash()
