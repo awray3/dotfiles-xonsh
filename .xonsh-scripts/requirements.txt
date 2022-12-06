@@ -1,0 +1,9 @@
+# xonsh requirements, aka xontribs
+xontrib-jupyter-shell
+xontrib-prompt-vi-mode
+xontrib-z
+xontrib-kitty
+xontrib-argcomplete
+xontrib-prompt-starship
+xontrib-homebrew
+xonsh-direnv
