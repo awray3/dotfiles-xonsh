@@ -14,13 +14,17 @@ import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.expanduser('~/.xonsh-scripts/'))
 del _sys, _os
 
+echo "Loading my rc file"
+
 xontrib load argcomplete 
 xontrib load coreutils 
-xontrib load kitty 
 xontrib load prompt_vi_mode 
 xontrib load z 
 # production-only
+# xontrib load kitty 
 # xontrib load homebrew 
 # xontrib load direnv
 # xontrib load prompt_starship
 # XONSH WEBCONFIG END
+
+# execx($(starship init xonsh))
