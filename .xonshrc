@@ -1,6 +1,6 @@
 # XONSHr WEBCONFIG START
 # $PROMPT = '{INTENSE_RED}{user}{RESET} at {INTENSE_PURPLE}{hostname}{RESET} in {BOLD_GREEN}{cwd}{RESET}\n↪ '
-$NVIM_TUI_ENABLE_TRUE_COLOR = 1
+# $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 $EDITOR = 'nvim'
 $VISUAL = 'code'
 
@@ -10,9 +10,10 @@ custom_aliases = {
 
 aliases.update(custom_aliases)
 
-import sys as _sys, os as _os
-_sys.path.insert(0, _os.path.expanduser('~/.xonsh-scripts/'))
-del _sys, _os
+def add_scripts_to_path(scripts_folder):
+    import sys as _sys, os as _os
+    _sys.path.insert(0, _os.path.expanduser(scripts_folder))
+    del _sys, _os
 
 echo "Loading my rc file"
 
@@ -21,10 +22,7 @@ xontrib load coreutils
 xontrib load prompt_vi_mode 
 xontrib load z 
 # production-only
-# xontrib load kitty 
-# xontrib load homebrew 
-# xontrib load direnv
-# xontrib load prompt_starship
+xontrib load kitty 
+xontrib load homebrew 
+xontrib load direnv
 # XONSH WEBCONFIG END
-
-# execx($(starship init xonsh))
